@@ -8,18 +8,21 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.TimeUnit;
+
+import com.gs.collections.impl.map.mutable.ConcurrentHashMap;
 
 /**
  * Created by malakag on 1/27/16.
  */
 @State(Scope.Benchmark)
 public class GSVsConSkipListMap {
-    com.gs.collections.impl.map.mutable.ConcurrentHashMap<Long,Long> hashMap = new com.gs.collections.impl.map.mutable.ConcurrentHashMap<Long, Long>();
-    ConcurrentSkipListMap<Long,Long> concurrentMap = new ConcurrentSkipListMap<Long, Long>();
+    ConcurrentMap<Long,Long> hashMap = new ConcurrentHashMap<Long, Long>();
+    ConcurrentMap<Long,Long> concurrentMap = new ConcurrentSkipListMap<Long, Long>();
 
-    @Param({"100", "1000", "10000", "15000"})
+    @Param({"100","500", "1000"})
     public long size;
     @Setup
     public void BenchMarkSetUp() {
@@ -30,18 +33,14 @@ public class GSVsConSkipListMap {
 
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @Warmup(iterations = 10,time = 1,timeUnit = TimeUnit.MICROSECONDS)
-    @Threads(16) //Define number of threads
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
+    @Threads(8) //Define number of threads
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public int sizeCallGCHashMap() {
         return hashMap.size();
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @Warmup(iterations = 10,time = 1,timeUnit = TimeUnit.MICROSECONDS)
-    @Threads(16) //Define number of threads
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
+    @Threads(8) //Define number of threads
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public int sizeCallConSkipList(){
         return concurrentMap.size();
     }
