@@ -1,5 +1,6 @@
 package com.malaka.jmh;
 
+import com.gs.collections.impl.map.mutable.ConcurrentHashMapUnsafe;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.profile.StackProfiler;
 import org.openjdk.jmh.results.format.ResultFormatType;
@@ -19,7 +20,7 @@ import com.gs.collections.impl.map.mutable.ConcurrentHashMap;
  */
 @State(Scope.Benchmark)
 public class GSVsConSkipListMap {
-    ConcurrentMap<Long,Long> hashMap = new ConcurrentHashMap<Long, Long>();
+    ConcurrentMap<Long,Long> hashMap = new ConcurrentHashMapUnsafe<Long, Long>();
     ConcurrentMap<Long,Long> concurrentMap = new ConcurrentSkipListMap<Long, Long>();
 
     @Param({"100","500", "1000"})
