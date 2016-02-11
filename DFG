@@ -1,0 +1,13 @@
+Benchmark                                     (size)  Mode  Cnt     Score     Error  Units
+SkipListSetVsGSSet.sizeCallConSkipSet            100  avgt   20   875.624 ±  34.369  ns/op
+SkipListSetVsGSSet.sizeCallConSkipSet:·stack     100  avgt            NaN              ---
+SkipListSetVsGSSet.sizeCallConSkipSet            500  avgt   20  2607.160 ± 826.527  ns/op
+SkipListSetVsGSSet.sizeCallConSkipSet:·stack     500  avgt            NaN              ---
+SkipListSetVsGSSet.sizeCallConSkipSet           1000  avgt   20  9505.872 ± 324.058  ns/op
+SkipListSetVsGSSet.sizeCallConSkipSet:·stack    1000  avgt            NaN              ---
+SkipListSetVsGSSet.sizeCallGCHashSet             100  avgt   20    15.310 ±   5.061  ns/op
+SkipListSetVsGSSet.sizeCallGCHashSet:·stack      100  avgt            NaN              ---
+SkipListSetVsGSSet.sizeCallGCHashSet             500  avgt   20    23.926 ±   0.848  ns/op
+SkipListSetVsGSSet.sizeCallGCHashSet:·stack      500  avgt            NaN              ---
+SkipListSetVsGSSet.sizeCallGCHashSet            1000  avgt   20    18.872 ±   5.244  ns/op
+SkipListSetVsGSSet.sizeCallGCHashSet:·stack     1000  avgt            NaN              ---
