@@ -5,5 +5,5 @@ To Run Benchmark:
 
 Build project using maven,
 
-Execute java -cp target/benchmarks.jar com.malaka.jmh.(WANTED CLASS NAME) in project folder 
+Execute java -cp target/benchmarks.jar com.malaka.jmh.(WANTED CLASS NAME) in project folder
 
