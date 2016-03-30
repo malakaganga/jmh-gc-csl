@@ -1,5 +1,5 @@
 # jmh-gc-csl
-This project can be used to compare performances of Goldman Sachs' Collections vs Java Util Collections
+This project can be used to compare performances of Goldman Sachs' Collections vs Java Util Collections and also includes the Benchmarks for java.util.ConcurrentHashMap's put operation
 
 To Run Benchmark:
 
